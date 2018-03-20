@@ -5,453 +5,8 @@
 @import "variables";
 
 // Bootstrap
-//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
-
-/*
- * @名称：base.css
- * @功能：1、重设浏览器默认样式
- *       2、设置通用原子类
- */
-/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
-html {
-    background: white;
-    color: black;
-}
-
-article, aside, dialog, footer, header, section, footer, nav, figure, menu {
-    display: block
-}
-
-/* 内外边距通常让各个浏览器样式的表现位置不同 */
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    margin: 0;
-    padding: 0;
-}
-
-/* 要注意表单元素并不继承父级 font 的问题 */
-body, button, input, select, textarea {
-    font: 12px \5b8b\4f53, arial, sans-serif;
-    line-height: 1.2;
-}
-
-input, select, textarea {
-    font-size: 100%;
-}
-
-/* 去掉 table cell 的边距并让其边重合 */
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* ie bug：th 不继承 text-align */
-th {
-    text-align: inherit;
-}
-
-/* 去除默认边框 */
-fieldset, img {
-    border: none;
-}
-
-/* ie6 7 8(q) bug 显示为行内表现 */
-iframe {
-    display: block;
-}
-
-/* 去掉 firefox 下此元素的边框 */
-abbr, acronym {
-    border: none;
-    font-variant: normal;
-}
-
-/* 一致的 del 样式 */
-del {
-    text-decoration: line-through;
-}
-
-address, caption, cite, code, dfn, em, th, var {
-    font-style: normal;
-    font-weight: 500;
-}
-
-/* 去掉列表前的标识，li 会继承 */
-ol, ul {
-    list-style: none;
-}
-
-/* 对齐是排版最重要的因素，别让什么都居中 */
-caption, th {
-    text-align: left;
-}
-
-/* 来自yahoo，让标题都自定义，适应多个系统应用 */
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: 500;
-}
-
-q:before, q:after {
-    content: '';
-}
-
-/* 统一上标和下标 */
-sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-/* 让链接在 hover 状态下显示下划线 */
-a:hover {
-    text-decoration: underline;
-}
-
-/* 默认不显示下划线，保持页面简洁 */
-ins, a {
-    text-decoration: none;
-    outline: none;
-}
-
-/* 去除 ie6 & ie7 焦点点状线 */
-a:focus, *:focus, a:hover {
-    text-decoration: none;
-    outline: none;
-}
-
-/* 清除浮动 */
-.clearfix:before, .clearfix:after {
-    content: "";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-    overflow: hidden;
-}
-
-.clearfix {
-    zoom: 1; /* for ie6 & ie7 */
-}
-
-.clear {
-    clear: both;
-    display: block;
-    font-size: 0;
-    height: 0;
-    line-height: 0;
-    overflow: hidden;
-}
-
-/* 设置显示和隐藏，通常用来与 js 配合 */
-.hide {
-    display: none;
-}
-
-.block {
-    display: block;
-}
-
-/* 设置浮动，减少浮动带来的 bug */
-.fl, .fr {
-    display: inline;
-}
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
-}
-
-/*边距*/
-.m10 {
-    margin: 10px
-}
-
-.m15 {
-    margin: 15px
-}
-
-.m30 {
-    margin: 30px
-}
-
-.mt5 {
-    margin-top: 5px
-}
-
-.mt10 {
-    margin-top: 10px
-}
-
-.mt15 {
-    margin-top: 15px
-}
-
-.mt30 {
-    margin-top: 30px
-}
-
-.mt50 {
-    margin-top: 50px
-}
-
-.mt100 {
-    margin-top: 100px
-}
-
-.mb5 {
-    margin-bottom: 5px
-}
-
-.mb10 {
-    margin-bottom: 10px
-}
-
-.mb15 {
-    margin-bottom: 15px
-}
-
-.mb20 {
-    margin-bottom: 20px
-}
-
-.mb30 {
-    margin-bottom: 30px
-}
-
-.mb50 {
-    margin-bottom: 50px
-}
-
-.mb100 {
-    margin-bottom: 100px
-}
-
-.ml5 {
-    margin-left: 5px
-}
-
-.ml10 {
-    margin-left: 10px
-}
-
-.ml15 {
-    margin-left: 15px
-}
-
-.ml20 {
-    margin-left: 20px
-}
-
-.ml30 {
-    margin-left: 30px
-}
-
-.ml50 {
-    margin-left: 50px
-}
-
-.ml100 {
-    margin-left: 100px
-}
-
-.mr5 {
-    margin-right: 5px
-}
-
-.mr10 {
-    margin-right: 10px
-}
-
-.mr13 {
-    margin-right: 13px
-}
-
-.mr15 {
-    margin-right: 15px
-}
-
-.mr20 {
-    margin-right: 20px
-}
-
-.mr50 {
-    margin-right: 50px
-}
-
-.mr100 {
-    margin-right: 100px
-}
-
-.p10 {
-    padding: 10px;
-}
-
-.p15 {
-    padding: 15px;
-}
-
-.p30 {
-    padding: 30px;
-}
-
-.pt5 {
-    padding-top: 5px
-}
-
-.pt10 {
-    padding-top: 10px
-}
-
-.pt15 {
-    padding-top: 15px
-}
-
-.pt20 {
-    padding-top: 20px
-}
-
-.pt30 {
-    padding-top: 30px
-}
-
-.pt50 {
-    padding-top: 50px
-}
-
-.pb5 {
-    padding-bottom: 5px
-}
-
-.pb100 {
-    padding-bottom: 100px
-}
-
-.pl5 {
-    padding-left: 5px
-}
-
-.pl10 {
-    padding-left: 10px
-}
-
-.pl50 {
-    padding-left: 50px
-}
-
-.pl100 {
-    padding-left: 100px
-}
-
-.pr5 {
-    padding-right: 5px
-}
-
-.pr10 {
-    padding-right: 10px
-}
-
-.pr15 {
-    padding-right: 15px
-}
-
-.pr100 {
-    padding-right: 100px
-}@font-face {
-    font-family: "iconfont";
-    src: url(/fonts/iconfont.eot); /* IE9*/
-    src: url(/fonts/iconfont.eot#iefix) format('embedded-opentype'),  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
-    url(/fonts/iconfont.ttf) format('truetype'),  url(/fonts/iconfont.svg#iconfont) format('svg'); /* iOS 4.1- */
-}
-
-.iconfont {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-search:before {
-    content: "\E613";
-}
-
-.icon-weixin:before {
-    content: "\E604";
-}
-
-.icon-dianhua:before {
-    content: "\E649";
-}
-
-.icon-qidongyeya:before {
-    content: "\E60A";
-}
-
-.icon-huanjing:before {
-    content: "\E657";
-}
-
-.icon-dingwei:before {
-    content: "\E68B";
-}
-
-.icon-jiantou:before {
-    content: "\E655";
-}
-
-.icon-jiqiren:before {
-    content: "\E673";
-}
-
-.icon-chevron-copy-copy-copy-copy-copy-copy:before {
-    content: "\E625";
-}
-
-.icon-bandaotidianzitongxin:before {
-    content: "\E63F";
-}
-
-.icon-artboard85:before {
-    content: "\E670";
-}
-
-.icon-dianlichuanganqi:before {
-    content: "\E622";
-}
-
-.icon-weibo:before {
-    content: "\E601";
-}
-
-.icon-analysis:before {
-    content: "\E669";
-}
-
-.icon-celiang:before {
-    content: "\E600";
-}
-
-.icon-jichuang:before {
-    content: "\E663";
-}
-
-.icon-shebei:before {
-    content: "\E66B";
-}
 
 /*------ The custom style -----*/
 
@@ -466,26 +21,26 @@ $gray-3: #e2e2e2;
 $gray-4: #ddd;
 $gray-5: #d2d2d2;
 $gray-6: #c2c2c2;
+$gray-7: #c1c1c1;
 
 $bg-color: #1bc550;
+$bg-black: #000;
+
 $tx-color: #333;
+$tx-white: #fff;
 
 html{
     position:relative;
     min-height:100%;
 }
 
+$mb-footer:50px;
 body {
     font-family: MicrosoftYaHeiUI;
     background-color: #fff;
+    color: $tx-color;
     /* Margin bottom by footer height */
-    margin-bottom:300px;
-}
-
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
+    margin-bottom:$mb-footer;
 }
 
 $linkColor: #333 #c6c6c6 !default;
@@ -529,39 +84,9 @@ a {
                     }
                 }
             }
-            .search{
-                width:200px;
-                float:right;
+            .login-box{
                 margin-top:20px;
                 position:relative;
-                > input{
-                    border-style: none;
-                    outline: none;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    color: #000;
-                    height: 30px;
-                    line-height: 30px;
-                    width: 75%;
-                }
-                .searchBtn{
-                    width: 35px;
-                    height: 30px;
-                    background-color: #d6d6d6;
-                    color: #888686;
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    :hover{
-                        color:#fff;
-                        background-color:#1bc550;
-                    }
-                    i{
-                        display: inline-block;
-                        padding: 5px 10px;
-                    }
-                }
             }
         }
 
@@ -569,6 +94,37 @@ a {
 }
 
 /** _footer **/
+
+.footer{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    /* Set the fixed height of the footer here */
+    height: $mb-footer;
+    background-color: $bg-black;
+    .container{
+        padding-right:15px;
+        padding-left:15px;
+        p{
+            margin:12px 0;
+            color:$gray-7;
+            font-size:12px;
+            a{
+                color:inherit;
+            }
+        }
+    }
+}
+
+/****/
+.register-page,
+.login-page{
+    .box{
+        margin-top:50px;
+    }
+}
+
+/*
 .footer{
     position:absolute;
     bottom:0;
