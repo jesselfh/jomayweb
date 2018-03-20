@@ -8450,7 +8450,7 @@ a a:hover {
   color: inherit;
 }
 
-/****/
+/** register **/
 
 .register-page .box,
 .login-page .box {
@@ -8462,6 +8462,12 @@ a a:hover {
   margin-bottom: 0px;
   margin-top: 10px;
   cursor: pointer;
+}
+
+/** User profile page **/
+
+.users-show-page .user-info .thumbnail {
+  margin-bottom: 0px;
 }
 
 /*
