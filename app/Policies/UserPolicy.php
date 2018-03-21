@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Policies;
+
+use App\Models\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class UserPolicy
+{
+    use HandlesAuthorization;
+
+    /**
+     * Create a new policy instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    //用于用户更新时的权限验证
+    public function update(User $current, User $user)
+    {
+        return $current->id === $user->id;
+    }
+}
