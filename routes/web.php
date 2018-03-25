@@ -30,6 +30,4 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::resource('users','UsersController',['only' => ['show','update','edit']]);
 
-
-
 Route::resource('news', 'NewsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);

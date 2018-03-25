@@ -33,6 +33,6 @@ class CreateCategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('categories');
-        NestedSet::dropColumns($table);//删除嵌套字段
+        //NestedSet::dropColumns($table);//删除嵌套字段
     }
 }

@@ -12,7 +12,7 @@
             </div>
 
             <div class="panel-body">
-                @if($news->count())
+                @if($newss->count())
                     <table class="table table-condensed table-striped">
                         <thead>
                             <tr>
@@ -23,19 +23,19 @@
                         </thead>
 
                         <tbody>
-                            @foreach($news as $news)
+                            @foreach($newss as $news)
                                 <tr>
                                     <td class="text-center"><strong>{{$news->id}}</strong></td>
 
                                     <td>{{$news->title}}</td> <td>{{$news->body}}</td> <td>{{$news->user_id}}</td> <td>{{$news->news_category_id}}</td> <td>{{$news->reply_count}}</td> <td>{{$news->view_count}}</td> <td>{{$news->last_reply_user_id}}</td> <td>{{$news->order}}</td> <td>{{$news->excerpt}}</td> <td>{{$news->slug}}</td>
-                                    
+
                                     <td class="text-right">
                                         <a class="btn btn-xs btn-primary" href="{{ route('news.show', $news->id) }}">
-                                            <i class="glyphicon glyphicon-eye-open"></i> 
+                                            <i class="glyphicon glyphicon-eye-open"></i>
                                         </a>
-                                        
+
                                         <a class="btn btn-xs btn-warning" href="{{ route('news.edit', $news->id) }}">
-                                            <i class="glyphicon glyphicon-edit"></i> 
+                                            <i class="glyphicon glyphicon-edit"></i>
                                         </a>
 
                                         <form action="{{ route('news.destroy', $news->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Delete? Are you sure?');">
@@ -49,7 +49,8 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {!! $news->render() !!}
+
+                    {!! $newss->render() !!}
                 @else
                     <h3 class="text-center alert alert-info">Empty!</h3>
                 @endif
