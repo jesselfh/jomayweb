@@ -9,7 +9,10 @@
 
                         <span>{{$news->updated_at->toDateString()}}</span>
 
-                        <i class="iconfont icon-jiantou"></i>{{$news->newsCategory->name}}
+                        <i class="iconfont icon-jiantou"></i>
+                        <a href="{{ route('newscategories.show', $news->newsCategory->id) }}" title="{{ $news->newsCategory->name }}">
+                            {{$news->newsCategory->name}}
+                        </a>
                     </div>
                 </a>
             </li>

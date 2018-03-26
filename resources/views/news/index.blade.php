@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', isset($newscategory) ? $newscategory->name : '新闻动态')
+
 @section('content')
 <div class="news">
 
@@ -13,7 +15,13 @@
                 <img src="{{ URL::asset('/images/news/new0.png') }}" width="506px" height="229px">
             </div>
             <div class="title">
-                <span>新闻动态</span>
+                <span>
+                    @if(isset($newscategory))
+                       {{ $newscategory->name }}
+                    @else
+                        新闻动态
+                    @endif
+                </span>
             </div>
         </div>
     </div>

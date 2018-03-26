@@ -7,13 +7,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="./index.html">首页</a>
+                        <a href="">首页</a>
                     </li>
                     <li>
                         <a href="#">产品</a>
                     </li>
                     <li>
-                        <a href="./news.html">新闻</a>
+                        <a href="{{ route('news.index') }}">新闻</a>
                     </li>
                     <li>
                         <a href="./problem.html">常见问题</a>
