@@ -8373,6 +8373,137 @@ a a:hover {
   color: #c6c6c6;
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.img-content {
+  margin-top: 65px;
+  position: relative;
+  z-index: 1;
+}
+
+.img-content .leftContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.img-content .title {
+  position: absolute;
+  right: -240px;
+  top: 60px;
+  font-size: 24px;
+  color: #1bc550;
+}
+
+.img-content .title:after {
+  position: absolute;
+  left: -170px;
+  top: 15px;
+  content: '';
+  width: 160px;
+  height: 1px;
+  background-color: #333;
+}
+
+.infoList {
+  margin-bottom: 60px;
+}
+
+.infoList .title {
+  float: left;
+}
+
+.infoList .num {
+  margin-left: 20px;
+}
+
+.infoList ul,
+.infoList li {
+  width: 100%;
+}
+
+.infoList li {
+  padding-left: 80px;
+  padding-right: 80px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.infoList li:hover {
+  background-color: #1bc550 !important;
+}
+
+.infoList li:hover a {
+  color: #fff;
+}
+
+.infoList li:hover a i {
+  color: #fff;
+}
+
+.infoList li:hover .moreBall {
+  color: #fff;
+}
+
+.infoList linth-of-type(2n-1) {
+  background-color: #dedede;
+}
+
+.infoList li a {
+  color: #333333;
+}
+
+.infoList li .title {
+  width: 560px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoList li i {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 80px;
+  font-size: 12px;
+  color: #666666;
+}
+
+/** 分页 **/
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #1bc550;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  background-color: #1bc550;
+  border-color: #1bc550;
+}
+
+/*
+.pagination{
+    > .active{
+        > a, > span{
+            background-color: #1bc550;
+            border-color: #1bc550;
+            &:hover,
+            &:focus{
+                background-color: #1bc550;
+                border-color: #1bc550;
+            }
+        }
+    }
+}*/
+
 /** _header **/
 
 .header {
@@ -8468,6 +8599,16 @@ a a:hover {
 
 .users-show-page .user-info .thumbnail {
   margin-bottom: 0px;
+}
+
+/** news page **/
+
+.news .newsContent {
+  margin-top: 320px;
+}
+
+.news .infoList {
+  margin-top: 300px;
 }
 
 /*

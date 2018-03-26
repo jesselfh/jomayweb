@@ -51,6 +51,123 @@ a {
     }
 }
 
+.container{
+    width:1200px;
+    margin:0 auto;
+    overflow:hidden;
+}
+
+.img-content{
+    margin-top:65px;
+    position:relative;
+    z-index:1;
+    .leftContent{
+        position:absolute;
+        left:0;
+        top:0;
+        z-index:-1;
+    }
+    .title{
+        position:absolute;
+        right:-240px;
+        top:60px;
+        font-size:24px;
+        color:#1bc550;
+        &:after{
+            position:absolute;
+            left:-170px;
+            top:15px;
+            content:'';
+            width:160px;
+            height:1px;
+            background-color:#333;
+        }
+    }
+}
+
+.infoList{
+    margin-bottom:60px;
+    .title{
+        float:left;
+    }
+    .num{
+        margin-left:20px;
+    }
+    ul,li{
+        width:100%;
+    }
+    li{
+        padding-left:80px;
+        padding-right:80px;
+        height:40px;
+        line-height:40px;
+        &:hover{
+            background-color:#1bc550 !important;
+            a{
+                color:#fff;
+                i{
+                    color:#fff;
+                }
+            }
+            .moreBall{
+                color:#fff;
+            }
+        }
+        &nth-of-type(2n-1){
+            background-color:#dedede;
+        }
+        a{
+            color:#333333;
+        }
+        .title{
+            width:560px;
+            overflow:hidden;
+            -o-text-overflow:ellipsis;
+               text-overflow:ellipsis;
+        }
+        i{
+            display:inline-block;
+            vertical-align:middle;
+            margin-left:80px;
+            font-size:12px;
+            color:#666666;
+        }
+    }
+}
+
+/** 分页 **/
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #1bc550;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  background-color: #1bc550;
+  border-color: #1bc550;
+}
+
+/*
+.pagination{
+    > .active{
+        > a, > span{
+            background-color: #1bc550;
+            border-color: #1bc550;
+            &:hover,
+            &:focus{
+                background-color: #1bc550;
+                border-color: #1bc550;
+            }
+        }
+    }
+}*/
+
+
 /** _header **/
 .header{
     width:100%;
@@ -135,6 +252,18 @@ a {
         .thumbnail{
             margin-bottom:0px;
         }
+    }
+}
+
+/** news page **/
+
+
+.news{
+    .newsContent{
+        margin-top:320px;
+    }
+    .infoList{
+        margin-top:300px;
     }
 }
 

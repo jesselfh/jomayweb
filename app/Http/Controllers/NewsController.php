@@ -16,7 +16,7 @@ class NewsController extends Controller
 
 	public function index()
 	{
-		$newss = News::paginate();
+		$newss = News::with('newsCategory')->paginate(30);
 		return view('news.index', compact('newss'));
 	}
 
