@@ -3,7 +3,7 @@
     <ul class="media-list">
         @foreach($newss as $news)
             <li class="media">
-                <a href="">
+                <a href="{{ route('news.show', [$news->id]) }}">
                     <div class="title">{{$news->title}}</div>
                     <div class="time">
 
