@@ -9,13 +9,8 @@ use App\Models\News;
 
 class NewsObserver
 {
-    public function creating(News $news)
+    public function saving(News $news)
     {
-        //
-    }
-
-    public function updating(News $news)
-    {
-        //
+        $news->excerpt = make_excerpt($news->body);//make_excerpt是自定义的辅助方法，在helpers.php中定义
     }
 }

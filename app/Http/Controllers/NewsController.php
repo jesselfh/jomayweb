@@ -6,6 +6,8 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
+use App\Models\NewsCategory;
+use Auth;
 
 class NewsController extends Controller
 {
@@ -27,13 +29,18 @@ class NewsController extends Controller
 
 	public function create(News $news)
 	{
-		return view('news.create_and_edit', compact('news'));
+        $newscategories = NewsCategory::all();
+		return view('news.create_and_edit', compact('news','newscategories'));
 	}
 
-	public function store(NewsRequest $request)
+	public function store(NewsRequest $request, News $news)
 	{
-		$news = News::create($request->all());
-		return redirect()->route('news.show', $news->id)->with('message', 'Created successfully.');
+        $news->fill($request->all());
+        $news->user_id = Auth::id();
+        //$news->excerpt = "aasdf  dds";
+        $news->save();
+
+		return redirect()->route('news.show', $news->id)->with('message', '新闻创建成功！');
 	}
 
 	public function edit(News $news)
