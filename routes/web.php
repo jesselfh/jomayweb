@@ -31,5 +31,6 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::resource('users','UsersController',['only' => ['show','update','edit']]);
 
 Route::resource('news', 'NewsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::post('upload_image','NewsController@uploadImage')->name('news.upload_image');
 
 Route::resource('newscategories','NewsCategoriesController',['only' => 'show']);
