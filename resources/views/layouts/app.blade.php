@@ -7,6 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="@yield('description','湖北卓镁工控设备有限公司')">
 
     <title>@yield('title', 'JomayWeb') - 湖北卓镁工控设备有限公司</title>
 

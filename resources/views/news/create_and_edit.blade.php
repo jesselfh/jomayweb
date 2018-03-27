@@ -7,14 +7,14 @@
         <div class="panel panel-default">
 
             <div class="panel-heading">
-                <h1>
+                <h2 class="text-center">
                     <i class="glyphicon glyphicon-edit"></i>
                     @if($news->id)
                         编辑新闻 #{{$news->id}}
                     @else
                         添加新闻
                     @endif
-                </h1>
+                </h2>
             </div>
 
             @include('common.error')
@@ -71,8 +71,10 @@
 
     <script>
     $(document).ready(function(){
+
         var editor = new Simditor({
             textarea: $('#editor'),
+            toolbar:['title','bold','italic','underline','strikethrough','fontScale','color','ol','ul','blockquote','code','table','link','image','hr','indent','outdent','alignment'],
             upload:{
                 url:'{{ route('news.upload_image') }}',
                 params:{_token: '{{ csrf_token() }}'},

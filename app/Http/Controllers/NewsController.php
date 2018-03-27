@@ -17,9 +17,9 @@ class NewsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-	public function index()
+	public function index(Request $request, News $news)
 	{
-		$newss = News::with('newsCategory')->paginate(30);
+		$newss = $news->withOrder($request->order)->paginate(20);
 		return view('news.index', compact('newss'));
 	}
 
@@ -39,7 +39,6 @@ class NewsController extends Controller
         $news->fill($request->all());
         $news->user_id = Auth::id();
         //$news->excerpt = "aasdf  dds";
-        dd($news);
         $news->save();
 
 		return redirect()->route('news.show', $news->id)->with('message', '新闻创建成功！');
@@ -56,7 +55,7 @@ class NewsController extends Controller
 		$this->authorize('update', $news);
 		$news->update($request->all());
 
-		return redirect()->route('news.show', $news->id)->with('message', 'Updated successfully.');
+		return redirect()->route('news.show', $news->id)->with('message', '更新成功！');
 	}
 
 	public function destroy(News $news)
@@ -64,7 +63,7 @@ class NewsController extends Controller
 		$this->authorize('destroy', $news);
 		$news->delete();
 
-		return redirect()->route('news.index')->with('message', 'Deleted successfully.');
+		return redirect()->route('news.index')->with('message', '成功删除！');
 	}
 
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
