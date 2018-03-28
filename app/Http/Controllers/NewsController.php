@@ -47,7 +47,8 @@ class NewsController extends Controller
 	public function edit(News $news)
 	{
         $this->authorize('update', $news);
-		return view('news.create_and_edit', compact('news'));
+        $newscategories = NewsCategory::all();
+		return view('news.create_and_edit', compact('news','newscategories'));
 	}
 
 	public function update(NewsRequest $request, News $news)
