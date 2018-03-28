@@ -15,6 +15,6 @@ class NewsPolicy extends Policy
 
     public function destroy(User $user, News $news)
     {
-        return true;
+        return $news->user_id == $user->id;
     }
 }
