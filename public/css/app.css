@@ -9079,6 +9079,69 @@ a a:hover {
   ling-height: 38px;
 }
 
+/** recruits index Page **/
+
+.recruit .title,
+.recruit .num,
+.recruit .time {
+  float: left;
+}
+
+.recruit .num {
+  margin-left: -150px;
+}
+
+.recruit .moreBall {
+  color: #1bc550;
+  font-size: 14px;
+  letter-spacing: 2px;
+  float: left;
+  margin-top: -3px;
+  margin-right: 2px;
+}
+
+.recruit .li {
+  margin-bottom: 20px;
+}
+
+.recruit .recruitContent {
+  padding-left: 80px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 12px;
+  line-height: 40px;
+  color: #333333;
+}
+
+/*
+.recruit .title, .recruit .num, .recruit .time {
+  float: left; }
+.recruit .num{
+    margin-right:30px;
+}
+.recruit .moreBall {
+  color: #1bc550;
+  font-size: 14px;
+  letter-spacing: 2px;
+  float: left;
+  margin-top: -3px;
+  margin-right: 2px; }
+
+.recruit .infoList {
+  margin-top: 300px; }
+  .recruit .infoList li {
+    margin-bottom: 20px;
+
+}
+
+.recruit .recruitContent {
+  padding-left: 80px;
+  margin-top: 20px;
+  margin-bottom:20px;
+  font-size: 12px;
+  line-height: 40px;
+  color: #333333; }
+
 /*
 .footer{
     position:absolute;

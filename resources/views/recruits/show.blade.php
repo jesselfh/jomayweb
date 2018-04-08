@@ -13,26 +13,29 @@
                 <div class="well well-sm">
                     <div class="row">
                         <div class="col-md-6">
-                            <a class="btn btn-link" href="{{ route('recruits.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
+                            <a class="btn btn-link" href="{{ route('recruits.index') }}">
+                                <i class="glyphicon glyphicon-backward"></i> 返回</a>
                         </div>
                         <div class="col-md-6">
                              <a class="btn btn-sm btn-warning pull-right" href="{{ route('recruits.edit', $recruit->id) }}">
-                                <i class="glyphicon glyphicon-edit"></i> Edit
+                                <i class="glyphicon glyphicon-edit"></i> 编辑
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <label>Position</label>
-<p>
-	{{ $recruit->position }}
-</p> <label>Recruit_count</label>
-<p>
-	{{ $recruit->recruit_count }}
-</p> <label>Requirement</label>
-<p>
-	{{ $recruit->requirement }}
-</p>
+                    <label>招聘职位：</label>
+                    <p>
+                    	{{ $recruit->position }}
+                    </p>
+                    <label>招聘人数：</label>
+                    <p>
+                    	{{ $recruit->recruit_count }}
+                    </p>
+                    <label>要求：</label>
+                    <p>
+                    	{{ $recruit->requirement }}
+                    </p>
             </div>
         </div>
     </div>

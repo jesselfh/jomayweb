@@ -1,61 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1>
-                    <i class="glyphicon glyphicon-align-justify"></i> Recruit
-                    <a class="btn btn-success pull-right" href="{{ route('recruits.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a>
-                </h1>
+<div class="recruit">
+
+    <div class="banner">
+        <img src="./images/recruit/banner.jpg" width="1200" height="260" alt="">
+    </div>
+
+    <div class="img-content clearfix">
+        <div class="leftContent">
+            <div class="img">
+                <img src="./images/recruit/banner1.png" width="508" height="228" alt="">
             </div>
-
-            <div class="panel-body">
-                @if($recruits->count())
-                    <table class="table table-condensed table-striped">
-                        <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th>Position</th> <th>Recruit_count</th> <th>Requirement</th>
-                                <th class="text-right">OPTIONS</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            @foreach($recruits as $recruit)
-                                <tr>
-                                    <td class="text-center"><strong>{{$recruit->id}}</strong></td>
-
-                                    <td>{{$recruit->position}}</td> <td>{{$recruit->recruit_count}}</td> <td>{{$recruit->requirement}}</td>
-                                    
-                                    <td class="text-right">
-                                        <a class="btn btn-xs btn-primary" href="{{ route('recruits.show', $recruit->id) }}">
-                                            <i class="glyphicon glyphicon-eye-open"></i> 
-                                        </a>
-                                        
-                                        <a class="btn btn-xs btn-warning" href="{{ route('recruits.edit', $recruit->id) }}">
-                                            <i class="glyphicon glyphicon-edit"></i> 
-                                        </a>
-
-                                        <form action="{{ route('recruits.destroy', $recruit->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Delete? Are you sure?');">
-                                            {{csrf_field()}}
-                                            <input type="hidden" name="_method" value="DELETE">
-
-                                            <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    {!! $recruits->render() !!}
-                @else
-                    <h3 class="text-center alert alert-info">Empty!</h3>
-                @endif
+            <div class="title">
+                <span>人才招聘</span>
             </div>
         </div>
     </div>
+
+    <div class="infoList" style="margin-top: 300px;">
+        {{-- 招聘列表 --}}
+        @include('recruits._recruits_list',['recruits'=>$recruits])
+    </div>
+        {{-- 分页 --}}
+        {!! $recruits->render() !!}
+
 </div>
 
 @endsection
