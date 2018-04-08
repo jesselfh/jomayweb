@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
 	{
 		\App\Models\User::observe(\App\Observers\UserObserver::class);
+		\App\Models\Recruit::observe(\App\Observers\RecruitObserver::class);
 		\App\Models\News::observe(\App\Observers\NewsObserver::class);
 
         //Carbon本地化, 显示中文时间

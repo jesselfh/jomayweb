@@ -34,3 +34,5 @@ Route::resource('news', 'NewsController', ['only' => ['index', 'show', 'create',
 Route::post('upload_image','NewsController@uploadImage')->name('news.upload_image');
 
 Route::resource('newscategories','NewsCategoriesController',['only' => 'show']);
+
+Route::resource('recruits', 'RecruitsController', ['only' => ['index', 'show','create', 'store', 'update', 'edit', 'destroy']]);

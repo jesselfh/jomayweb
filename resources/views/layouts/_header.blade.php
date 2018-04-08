@@ -7,7 +7,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="">首页</a>
+                        <a href="/">首页</a>
                     </li>
                     <li>
                         <a href="#">产品</a>
@@ -22,7 +22,7 @@
                         <a href="#">关于我们</a>
                     </li>
                     <li>
-                        <a href="#">人才招聘</a>
+                        <a href="{{ route('recruits.index') }}">人才招聘</a>
                     </li>
                 </ul>
             </nav>
