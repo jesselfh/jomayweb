@@ -9,9 +9,9 @@ use App\Models\Recruit;
 
 class RecruitObserver
 {
-    public function creating(Recruit $recruit)
+    public function saving(Recruit $recruit)
     {
-        //
+        $recruit->requirement = clean($recruit->requirement, 'user_topic_body');
     }
 
     public function updating(Recruit $recruit)
