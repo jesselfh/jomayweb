@@ -34,7 +34,7 @@
                     </p>
                     <label>要求：</label>
                     <p>
-                    	{{ $recruit->requirement }}
+                    	{!! $recruit->requirement !!}
                     </p>
             </div>
         </div>

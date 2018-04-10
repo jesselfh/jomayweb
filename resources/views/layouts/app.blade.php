@@ -12,7 +12,7 @@
     <title>@yield('title', 'JomayWeb') - 湖北卓镁工控设备有限公司</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?id=12345') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?id=125') }}" rel="stylesheet">
     @yield('styles')
 </head>
 

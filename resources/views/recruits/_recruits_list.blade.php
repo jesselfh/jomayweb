@@ -17,9 +17,7 @@
                 </div>
             </div>
         </li>
-        <div class="recruitContent">
-            {{ $recruit->requirement}}
-        </div>
+
     @endforeach
 </ul>
 @else
