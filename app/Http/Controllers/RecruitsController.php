@@ -33,7 +33,7 @@ class RecruitsController extends Controller
 	public function store(RecruitRequest $request)
 	{
 		$recruit = Recruit::create($request->all());
-		return redirect()->route('recruits.show', $recruit->id)->with('message', 'Created successfully.');
+		return redirect()->route('recruits.show', $recruit->id)->with('message', '招聘信息添加成功.');
 	}
 
 	public function edit(Recruit $recruit)
@@ -47,7 +47,7 @@ class RecruitsController extends Controller
 		$this->authorize('update', $recruit);
 		$recruit->update($request->all());
 
-		return redirect()->route('recruits.show', $recruit->id)->with('message', 'Updated successfully.');
+		return redirect()->route('recruits.show', $recruit->id)->with('message', '更新成功.');
 	}
 
 	public function destroy(Recruit $recruit)

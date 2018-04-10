@@ -10,19 +10,17 @@ class RecruitRequest extends Request
         {
             // CREATE
             case 'POST':
-            {
-                return [
-                    // CREATE ROLES
-                ];
-            }
             // UPDATE
             case 'PUT':
             case 'PATCH':
             {
                 return [
-                    // UPDATE ROLES
+                    'position' => 'required|between:2,20',
+                    'recruit_count' => 'required|numeric',
+                    'requirement' => 'required|min:3',
                 ];
             }
+
             case 'GET':
             case 'DELETE':
             default:
@@ -35,7 +33,8 @@ class RecruitRequest extends Request
     public function messages()
     {
         return [
-            // Validation messages
+            'position.between' => '职位必须介于2~20个字符之间',
+            'requirement.min' => '职位要求必须至少3个字符',
         ];
     }
 }

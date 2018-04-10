@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="col-lg-9 col-md-9 hidden-sm-12 hidden-xs-12">
+    <div class="col-lg-6 col-md-6 hidden-sm-12 hidden-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
                 <span>
@@ -42,6 +42,10 @@
                 暂无数据 ~_~
             </div>
         </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+        @include('users._sidebar')
     </div>
 
 </div>
