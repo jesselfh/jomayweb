@@ -9,12 +9,13 @@ class RecruitPolicy extends Policy
 {
     public function update(User $user, Recruit $recruit)
     {
-        // return $recruit->user_id == $user->id;
-        return true;
+        //只有admin管理员才能编辑
+        return $user->id == 1 ? true : false;
     }
 
     public function destroy(User $user, Recruit $recruit)
     {
-        return true;
+        //只有admin管理员才能删除
+        return $user->id == 1 ? true : false;
     }
 }

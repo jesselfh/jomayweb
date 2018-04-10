@@ -56,6 +56,6 @@ class RecruitsController extends Controller
 		$this->authorize('destroy', $recruit);
 		$recruit->delete();
 
-		return redirect()->route('recruits.index')->with('message', 'Deleted successfully.');
+		return redirect()->route('recruits.index')->with('message', '删除成功.');
 	}
 }
