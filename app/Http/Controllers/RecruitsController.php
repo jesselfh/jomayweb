@@ -22,7 +22,8 @@ class RecruitsController extends Controller
 
     public function show(Recruit $recruit)
     {
-        return view('recruits.show', compact('recruit'));
+        $recruits = Recruit::paginate(6);
+        return view('recruits.show', compact('recruit','recruits'));
     }
 
 	public function create(Recruit $recruit)

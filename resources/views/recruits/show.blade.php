@@ -2,40 +2,25 @@
 
 @section('content')
 
-<div class="container">
-    <div class="col-md-10 col-md-offset-1">
+<div class="row">
+
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 recruit-content">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1>Recruit / Show #{{ $recruit->id }}</h1>
-            </div>
-
             <div class="panel-body">
-                <div class="well well-sm">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a class="btn btn-link" href="{{ route('recruits.index') }}">
-                                <i class="glyphicon glyphicon-backward"></i> 返回</a>
-                        </div>
-                        <div class="col-md-6">
-                             <a class="btn btn-sm btn-warning pull-right" href="{{ route('recruits.edit', $recruit->id) }}">
-                                <i class="glyphicon glyphicon-edit"></i> 编辑
-                            </a>
-                        </div>
-                    </div>
+                <h4>招聘职位：<small>{{ $recruit->position }}</small></h4>
+                <h4>招聘人数：<small>{{ $recruit->recruit_count }}</small></h4>
+                <h4>要求：</h4>
+                <div class="recruit-body">
+                    {!! $recruit->requirement !!}
                 </div>
+            </div>
+        </div>
+    </div>
 
-                    <label>招聘职位：</label>
-                    <p>
-                    	{{ $recruit->position }}
-                    </p>
-                    <label>招聘人数：</label>
-                    <p>
-                    	{{ $recruit->recruit_count }}
-                    </p>
-                    <label>要求：</label>
-                    <p>
-                    	{!! $recruit->requirement !!}
-                    </p>
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs recruit-list">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                @include('recruits._sider_recruits_list')
             </div>
         </div>
     </div>
