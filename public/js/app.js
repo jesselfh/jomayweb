@@ -990,7 +990,15 @@ window.Vue = __webpack_require__(35);
 Vue.component('example-component', __webpack_require__(38));
 
 var app = new Vue({
-  el: '#app'
+    el: '#app'
+});
+
+$(function () {
+    $(".category-title").click(function (e) {
+        /*切换折叠指示图标*/
+        $(this).find("span").toggleClass("glyphicon-menu-down");
+        $(this).find("span").toggleClass("glyphicon-menu-up");
+    });
 });
 
 /***/ }),

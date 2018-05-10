@@ -9,28 +9,26 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="@yield('description','湖北卓镁工控设备有限公司')">
 
-    <title>@yield('title', 'JomayWeb') - 湖北卓镁工控设备有限公司</title>
+    <title>@yield('title', '湖北卓镁工控设备有限公司') </title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?id=125') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?id=15add') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
 <body>
-    <div id="app" class="{{ route_class() }}-page">
 
-        @include('layouts._header')
+    @include('layouts._header')
 
-        <div class="container">
-            @include('layouts._message')
-            @yield('content')
-        </div>
-
-        @include('layouts._footer')
+    <div class="container">
+        @include('layouts._message')
+        @yield('content')
     </div>
 
+    @include('layouts._footer')
+
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js?app=ssasdf333') }}"></script>
     @yield('scripts')
 </body>
 </html>

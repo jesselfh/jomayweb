@@ -1,22 +1,21 @@
 @if($recruits->count())
-<ul class="media-list recruit">
+<ul class="list-group">
     @foreach($recruits as $recruit)
-        <li class="media" style="background-color: #dedede">
-            <div class="media-body">
-                <a href="{{ route('recruits.show',[$recruit->id]) }}" class="title">
-                    · {{ $recruit->position }}
+        <li class="list-group-item">
+            <h4 class="list-group-item-heading">
+                <a href="{{ route('recruits.show',[$recruit->id]) }}">
+                    {{ $recruit->position }} | <small>襄阳 </small>
                 </a>
-                <span class="num">
-                    <span class="moreBall">{{ $recruit->recruit_count }}人</span>
-                </span>
-                <div class="time">
-                    <span class="moreBall">...</span>
-                    <span>|</span>
-                    <span>{{ $recruit->updated_at->format('m/d') }}</span>
-                    <span>|</span>
-                </div>
-            </div>
+            </h4>
+            <p class="list-group-item-text">
+                经验：1-5年 / 本科 / {{ $recruit->recruit_count }} 人
+                <span class="pull-right">发布时间：{{ $recruit->updated_at->format('Y/m/d') }}</span>
+            </p>
+
         </li>
+        @if(!$loop->last)
+            <hr>
+        @endif
 
     @endforeach
 </ul>

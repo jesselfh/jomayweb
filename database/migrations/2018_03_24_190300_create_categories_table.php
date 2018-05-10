@@ -18,10 +18,8 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name')->index()->comment('名称');
             $table->text('description')->nullable()->comment('描述');
-
-            Nestedset::columns($table);//嵌套分类所需要的字段（LFT，RGT，PARENT_ID）
-
             $table->timestamps();
+            Nestedset::columns($table);//嵌套分类所需要的字段（LFT，RGT，PARENT_ID）
         });
     }
 

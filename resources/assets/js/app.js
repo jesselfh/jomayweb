@@ -20,3 +20,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+
+$(function(){
+    $(".category-title").click(function(e){
+        /*切换折叠指示图标*/
+        $(this).find("span").toggleClass("glyphicon-menu-down");
+        $(this).find("span").toggleClass("glyphicon-menu-up");
+    });
+})

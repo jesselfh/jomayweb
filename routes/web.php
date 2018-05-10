@@ -36,3 +36,10 @@ Route::post('upload_image','NewsController@uploadImage')->name('news.upload_imag
 Route::resource('newscategories','NewsCategoriesController',['only' => 'show']);
 
 Route::resource('recruits', 'RecruitsController', ['only' => ['index', 'show','create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('questions', 'QuestionsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+
+Route::resource('products', 'ProductsController');
+Route::resource('brands', 'BrandsController');
+Route::resource('brands', 'BrandsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('products', 'ProductsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);

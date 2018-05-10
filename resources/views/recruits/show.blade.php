@@ -2,46 +2,53 @@
 
 @section('content')
 
-<div class="row">
+<div class="row recruit">
 
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 recruit-content">
-        <div class="panel panel-default">
-            <div class="panel-body">
+        <div class="panel">
 
-                <h4>招聘职位：<small>{{ $recruit->position }}</small></h4>
-                <h4>招聘人数：<small>{{ $recruit->recruit_count }}</small></h4>
-                <h4>要求：</h4>
-                <div class="recruit-body">
-                    {!! $recruit->requirement !!}
-                </div>
+            <div class="header-list">
+                <ul class="breadcrumb">
+                    <li><a href="">首页</a></li>
+                    <li><a href="">招贤纳士</a></li>
+                    <li>{{ $recruit->position }}</li>
+                </ul>
+            </div>
 
-                @can('update', $recruit)
-                    <div class="operate">
-                        <hr>
-                        <a href="{{ route('recruits.edit', $recruit->id) }}" class="btn btn-default btn-xs pull-left" role="button">
-                                <i class="glyphicon glyphicon-edit"></i> 编辑
-                            </a>
+        </div>
 
-                            <form action="{{ route('recruits.destroy', $recruit->id) }}" method="post">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
-                                <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left:6px;">
-                                    <i class="glyphicon glyphicon-trash"></i> 删除
-                                </button>
-                            </form>
-                    </div>
-                @endcan
-
+        <div class="panel">
+            <div class="panel-heading content">
+                <h3 class="panel-title">
+                    {{ $recruit->position }}
+                    <span class="pull-right">10k-15k</span>
+                </h3>
+            </div>
+            <div class="panel-body content">
+                <p class="city">襄阳市 | 本科 | 经验 1-3 年</p>
+                <p class="time">发布时间：{{ $recruit->updated_at->format('Y/m/d  h:m:s') }}</p>
             </div>
         </div>
+        <div class="panel">
+            <div class="panel-heading content">
+                 <h3 class="panel-title explain">职位说明</h3>
+            </div>
+            <div class="panel-body content">
+                {!! $recruit->requirement !!}
+            </div>
+            <div class="panel-heading content">
+                 <h3 class="panel-title other">其他</h3>
+            </div>
+            <div class="panel-body content">
+                <p class="addr">工作地点：湖北襄阳高新区长虹北路 6 号广景碧云天国际商务大厦</p>
+                <p class="publisher">发布人：卓镁</p>
+            </div>
+        </div>
+
     </div>
 
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs recruit-list">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                @include('recruits._sider_recruits_list')
-            </div>
-        </div>
+        @include('recruits._sider_recruits_list')
     </div>
 </div>
 

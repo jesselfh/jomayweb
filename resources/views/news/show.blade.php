@@ -5,40 +5,21 @@
 
 @section('content')
 
-<div class="row">
+<div class="row new">
 
-    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs author-info">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="text-center">
-                    作者：{{ $news->user->name }}
-                </div>
-                <hr>
-                <div class="media">
-                    <div align="center">
-                        <a href="{{ route('users.show', $news->user->id) }}">
-                            <img class="thumbnail img-responsive" src="{{ $news->user->avatar }}" width="300px" height="300px">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 news-content">
-        <div class="panel panel-default">
+    <div class="col-md-9 news-show-page">
+        <div class="panel">
             <div class="panel-body">
                 <h1 class="text-center">
                     {{ $news->title }}
                 </h1>
-
                 <div class="article-meta text-center">
+                    <i class="glyphicon glyphicon-time"></i>
                     {{ $news->created_at->diffForHumans() }}
-                    ⋅
-                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-                    {{ $news->reply_count }}
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="glyphicon glyphicon-user"></i>
+                    {{ $news->user->name }}
                 </div>
-
                 <div class="news-body">
                     {!! $news->body !!}
                 </div>
@@ -61,7 +42,30 @@
                 @endcan
 
             </div>
+
         </div>
+
+        <div class="panel">
+            <div class="panel-body about-news">
+                <h4>相关新闻：</h4>
+                <ul>
+                    @if($newss->count())
+                        @foreach($newss as $news)
+                            <li>
+                                <a href="{{ route('news.show',[$news->id]) }}"> {{ $news->title }}</a>
+                                <i class="glyphicon glyphicon-time"></i>
+                                {{ $news->created_at->diffForHumans() }}
+                            </li>
+                        @endforeach
+                    @else
+                        <h3 class="text-center alert alert-info">暂无数据！</h3>
+                    @endif
+
+                </ul>
+            </div>
+
+        </div>
+
     </div>
 
 </div>

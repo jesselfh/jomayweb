@@ -25,7 +25,8 @@ class NewsController extends Controller
 
     public function show(News $news)
     {
-        return view('news.show', compact('news'));
+        $newss = News::paginate(4);
+        return view('news.show', compact('news','newss'));
     }
 
 	public function create(News $news)
