@@ -16,7 +16,7 @@
                         <ul class="breadcrumb">
                             <li><a href="#">首页</a></li>
                             <li><a href="#">分类</a></li>
-                            <li><a href="#">产品列表</a></li>
+                            <li>{{ isset($category)? $category->name : '产品列表'}}</li>
                         </ul>
                     </div>
                     <div class="header-list search">

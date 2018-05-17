@@ -35,7 +35,7 @@ class ProductsTableSeeder extends Seeder
 
 
         $products = factory(Product::class)
-                            ->times(50)
+                            ->times(500)
                             ->make()
                             ->each(function ($product, $index) use($category_ids, $brand_ids, $doc_urls, $images, $faker) {
 

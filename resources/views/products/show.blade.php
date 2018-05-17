@@ -14,7 +14,8 @@
                 <div class="header-list">
                     <ul class="breadcrumb">
                         <li><a href="/">首页</a></li>
-                        <li><a href="{{ route('products.index') }}">产品列表</a></li>
+                        <li><a href="{{ route('products.index') }}">分类</a></li>
+                        <li><a href="{{ route('categories.show','[$product->category]') }}">{{ $product->category->name }}</a></li>
                         <li>产品 · {{ $product->name }}</li>
                     </ul>
                 </div>

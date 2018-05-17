@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Kalnoy\Nestedset\NodeTrait;
+use Baum;
 
-class Category extends Model
+class Category extends Baum\Node
 {
-    use NodeTrait;
-    protected $fillable = ['name','description', '_lft', '_rgt', 'parent_id',];
+    protected $table = 'categories';
+    protected $fillable = ['name','parent_id'];
+
+
 }

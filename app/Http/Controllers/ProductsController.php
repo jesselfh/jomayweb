@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -17,12 +18,14 @@ class ProductsController extends Controller
 	public function index()
 	{
 		$products = Product::paginate(20);
-		return view('products.index', compact('products'));
+        $categories = Category::where('name', '=', 'root')->first();
+		return view('products.index', compact('products','categories'));
 	}
 
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        $categories = Category::where('name', '=', 'root')->first();
+        return view('products.show', compact('product','categories'));
     }
 
 	public function create(Product $product)

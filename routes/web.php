@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/','PagesController@root')->name('root');
 
 // Authentication Routes...
@@ -30,16 +19,16 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::resource('users','UsersController',['only' => ['show','update','edit']]);
 
+
+Route::resource('categories','CategoriesController',['only' => ['show']]);
+
+Route::resource('brands', 'BrandsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('products', 'ProductsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
 Route::resource('news', 'NewsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::post('upload_image','NewsController@uploadImage')->name('news.upload_image');
-
 Route::resource('newscategories','NewsCategoriesController',['only' => 'show']);
 
 Route::resource('recruits', 'RecruitsController', ['only' => ['index', 'show','create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('questions', 'QuestionsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 
-
-Route::resource('products', 'ProductsController');
-Route::resource('brands', 'BrandsController');
-Route::resource('brands', 'BrandsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
-Route::resource('products', 'ProductsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
