@@ -1,6 +1,7 @@
 <?php
 
 Route::get('/','PagesController@root')->name('root');
+Route::get('search','PagesController@search');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -31,4 +32,6 @@ Route::resource('newscategories','NewsCategoriesController',['only' => 'show']);
 
 Route::resource('recruits', 'RecruitsController', ['only' => ['index', 'show','create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('questions', 'QuestionsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+
 

@@ -17,33 +17,22 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
-
-    //通过  分类id 首字母'A-Z' 关键词　查找产品
-    public function getProductsWithFilter($filter)
+    public function scopeWithFilter($query, $filter)
     {
-
-    }
-
-    public function getCategoryProductsWithFilter($filter, $category_id, $limit = 20)
-    {
-        return $this->applyFilter($filter == 'default' ? 'category' : $filter)
-                    ->where('category_id','=', $category_id)
-                    ->painate($limit);
-    }
-
-    public function applyFilter($filter)
-    {
-        $query = "";
-
-        switch ($filter) {
-            case 'category':
-                return $query->recentReply();
+        switch($filter){
+            case 'recent':
+                $query = $this->recent();
                 break;
 
-            default:
-                return $query->recentReply();
-                break;
+            case 'keywords':
+                $query = $this->keywords();
         }
+    }
+
+
+    public function scopeKeywords($query,$keywords)
+    {
+        return $query->where('name','like', '%'.$keywords.'%');
     }
 
     //按最新排序

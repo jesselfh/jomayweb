@@ -12,7 +12,7 @@
     <title>@yield('title', '湖北卓镁工控设备有限公司') </title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?id=15add') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?id=1556add') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
@@ -28,7 +28,7 @@
     @include('layouts._footer')
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js?app=ssasdf333') }}"></script>
+    <script src="{{ asset('js/app.js?app=sdfsss333') }}"></script>
     @yield('scripts')
 </body>
 </html>

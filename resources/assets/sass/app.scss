@@ -171,6 +171,12 @@ footer{
                 }
             }
         }
+        >li.active{
+            background-color: #fff;
+            a{
+                border-left:5px solid #269D81;
+            }
+        }
     }
 }
 

@@ -20,7 +20,10 @@
                         </ul>
                     </div>
                     <div class="header-list search">
-                        @include('libs._search')
+                        <form action="/search" method="get" class="navbar-form" role="search">
+                            <input name="keywords" type="search" class="form-control" placeholder="关键词">
+                            <button class="btn btn-success" type="submit">查询</button>
+                        </form>
                     </div>
                 </div>
 
@@ -37,4 +40,17 @@
 
     </div>
 
+@stop
+
+@section('scripts')
+    <script>
+        $(function(){
+            $('.category li.active').parent().addClass('in'); //选中的分类展开
+
+            $('.category li.active').parent().parent().addClass('active'); //分类的父类选中样式
+
+            $('li.active .category-title span').removeClass('glyphicon-menu-down');
+            $('li.active .category-title span').addClass('glyphicon-menu-up');
+        });
+    </script>
 @stop
