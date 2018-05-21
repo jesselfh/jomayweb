@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\Category;
 
 class BrandsController extends Controller
 {
@@ -15,7 +16,8 @@ class BrandsController extends Controller
     public function index()
     {
         $brands = Brand::paginate(16);
-        return view('brands.index',compact('brands'));
+        $categories = Category::where('name', '=', 'root')->first();
+        return view('brands.index',compact('brands','categories'));
     }
 
     /**

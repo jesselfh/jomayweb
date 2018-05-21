@@ -1,7 +1,9 @@
 <?php
 
 Route::get('/','PagesController@root')->name('root');
-Route::get('search','PagesController@search');
+Route::get('search/products','PagesController@search');
+Route::get('search/brands','PagesController@searchBrands');
+Route::get('letter/brands/{letter}', 'PagesController@searchBrandsByFirstLetter')->name('letter.brands');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -22,6 +24,7 @@ Route::resource('users','UsersController',['only' => ['show','update','edit']]);
 
 
 Route::resource('categories','CategoriesController',['only' => ['show']]);
+Route::get('categories/{category}/show_brands', 'CategoriesController@showBrands')->name('categories.show_brands');
 
 Route::resource('brands', 'BrandsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('products', 'ProductsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);

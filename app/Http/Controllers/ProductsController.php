@@ -17,8 +17,7 @@ class ProductsController extends Controller
 
 	public function index(ProductRequest $request)
 	{
-        $keywords = $request->get('keywords');
-		$products = Product::paginate(20);
+		$products = Product::with('category')->paginate(20);
         $categories = Category::where('name', '=', 'root')->first();
 		return view('products.index', compact('products','categories'));
 	}

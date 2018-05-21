@@ -20,7 +20,7 @@
                         </ul>
                     </div>
                     <div class="header-list search">
-                        <form action="/search" method="get" class="navbar-form" role="search">
+                        <form action="/search/products" method="get" class="navbar-form" role="search">
                             <input name="keywords" type="search" class="form-control" placeholder="关键词">
                             <button class="btn btn-success" type="submit">查询</button>
                         </form>
