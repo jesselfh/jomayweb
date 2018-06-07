@@ -68,6 +68,13 @@
 
     </div>
 
+    <div class="col-md-3">
+         <div class="panel">
+             <div class="panel-body">
+                 <img src="/images/news/news.png" alt="" class="img-responsive center-block">
+             </div>
+         </div>
+    </div>
 </div>
 
 @stop

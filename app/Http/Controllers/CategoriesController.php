@@ -12,7 +12,12 @@ class CategoriesController extends Controller
     public function show(Category $category)
     {
 
-        $products = Product::where('category_id',$category->id)->paginate(20);
+        //$products = Product::where('category_id',$category->id)->paginate(20);
+
+        //dd($category);
+
+        $products = Product::categorized($category)->paginate(20);
+
         $categories = Category::where('name', '=', 'root')->first();
 
         return view('products.index', compact('products','category','categories'));

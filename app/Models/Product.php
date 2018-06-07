@@ -40,4 +40,17 @@ class Product extends Model
     {
         return $query->orderBy('created_at','desc');
     }
+
+    public function scopeCategorized($query, Category $category = null)
+    {
+
+        if(is_null($category)){
+            return $query->with('categories');
+        }
+
+        $categoryIds = $category->getDescendantsAndSelf()->pluck('id');
+
+        return $query->with('category')
+                        ->whereIn('category_id', $categoryIds);
+    }
 }

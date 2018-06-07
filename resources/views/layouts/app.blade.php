@@ -12,7 +12,7 @@
     <title>@yield('title', '湖北卓镁工控设备有限公司') </title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?id=1556add') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?id=p1178dw6') }}" rel="stylesheet">
     @yield('styles')
 </head>
 
@@ -20,10 +20,10 @@
 
     @include('layouts._header')
 
-    <div class="container">
-        @include('layouts._message')
-        @yield('content')
-    </div>
+        <div class="container">
+            @include('layouts._message')
+            @yield('content')
+        </div>
 
     @include('layouts._footer')
 

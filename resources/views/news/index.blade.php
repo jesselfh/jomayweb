@@ -5,6 +5,10 @@
 @section('content')
 <div class="row news">
 
+    <div class="col-md-12 banner">
+        <img src="/images/news/banner.jpg" alt="" class="img-responsive center-block">
+    </div>
+
     <div class="col-md-8">
         <div class="panel">
             <div class="panel-heading">

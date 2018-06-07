@@ -1,15 +1,15 @@
-@if(1==1)
+@if($products->count())
     <div class="products-list">
-        @for($i=0; $i<10; $i++)
+        @foreach($products as $product)
         <div class="product">
-            <a href="#" class="thumbnail">
-                <img src="http://www.deppre.com/upload/images/20160921/20169213174840786.jpg.thumb.jpg" alt="通用的占位符缩略图">
+            <a href="{{ route('products.show', [$product->id]) }}" class="thumbnail">
+                <img src="{{ $product->cover_image }}" alt="通用的占位符缩略图">
             </a>
             <div class="caption">
-                <p class="text-center">产品名称</p>
+                <p class="text-center">{{ $product->name }}</p>
             </div>
         </div>
-        @endfor
+        @endforeach
     </div>
 @else
     <div class="empty-block">暂无数据 ~_~ </div>

@@ -4,7 +4,7 @@
 
 <div class="row brand">
     <div class="col-md-2">
-        @include('libs._category')
+        @include('brands._sidebar_category_list')
     </div>
     <div class="col-md-10">
 
@@ -52,7 +52,8 @@
             <div class="panel-body">
                 <h3>产品系列</h3>
                 <div class="media">
-                    @include('brands._brand_products_list')
+                    @include('brands._brand_products_list',['products' => $products])
+
                 </div>
             </div>
         </div>

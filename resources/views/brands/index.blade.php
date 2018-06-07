@@ -4,6 +4,14 @@
 @section('content')
     <div class="row brands">
 
+        <div class="col-md-12">
+            <div class="banner">
+
+                <img src="/images/brands/banner-brand.jpg" alt="" class="img-responsive center-block">
+
+            </div>
+        </div>
+
         <div class="col-md-2">
             @include('brands._sidebar_category_list')
         </div>

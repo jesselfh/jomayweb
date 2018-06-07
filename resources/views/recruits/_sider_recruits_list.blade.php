@@ -1,3 +1,8 @@
+<div class="panel">
+    <div class="panel-body">
+        <img src="/images/recruit/recruit.png" alt="" class="img-responsive center-block">
+    </div>
+</div>
 <div class="panel sider">
     <div class="panel-heading content">
         <h3 class="panel-title other-position">公司其他职位</h3>

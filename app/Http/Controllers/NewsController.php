@@ -19,7 +19,7 @@ class NewsController extends Controller
 
 	public function index(Request $request, News $news)
 	{
-		$newss = $news->withOrder($request->order)->paginate(20);
+		$newss = $news->withOrder($request->order)->paginate(10);
 		return view('news.index', compact('newss'));
 	}
 

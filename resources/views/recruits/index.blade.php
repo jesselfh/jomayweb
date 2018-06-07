@@ -18,6 +18,10 @@
         </div>
     </div>-->
 
+    <div class="col-md-12 banner">
+        <img src="/images/recruit/banner.jpg" alt="" class="img-responsive center-block">
+    </div>
+
     <div class="col-md-9">
 
         <div class="panel">

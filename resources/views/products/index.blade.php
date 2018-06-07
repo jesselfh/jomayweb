@@ -4,6 +4,11 @@
 @section('content')
     <div class="row products">
 
+        <div class="col-md-12 banner">
+            <img src="/images/products/banner.jpg" alt="" class="img-responsive center-block">
+        </div>
+
+
         <div class="col-md-2">
             @include('libs._category')
         </div>

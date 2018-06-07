@@ -40,7 +40,7 @@
                             </a>
                         </div>
                         <div class="product-block">
-                            <a href="#" target="_blank">
+                            <a href="{{ $product->doc_url }}" target="_blank">
                                 <img src="/images/doc.png" style="width:48px;height:54px;">
                             </a>
                         </div>

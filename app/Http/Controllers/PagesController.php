@@ -11,7 +11,27 @@ class PagesController extends Controller
 {
     public function root()
     {
-        return view('pages.root');
+        //优惠产品
+        $products = Product::all()->random(8);
+        //优势品牌
+        $brands = Brand::all()->random(12);
+        //资讯
+        //$infomations = ;
+        //dd($products);
+        //分类
+        $categories = Category::where('name', '=', 'root')->first();
+
+        return view('pages.root',compact('products','brands', 'categories'));
+    }
+
+    public function about()
+    {
+        return view('pages.about');
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
     }
 
     public function search(Request $request)

@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                 	<label for="requirement-field">要求</label>
-                	<textarea name="requirement" id="editor" class="form-control" rows="3">{{ old('requirement', $recruit->requirement ) }}</textarea>
+                	<textarea name="requirement" id="editor" class="form-control">{{ old('requirement', $recruit->requirement ) }}</textarea>
                 </div>
 
                 <div class="well well-sm">
@@ -70,7 +70,7 @@
 
         var editor = new Simditor({
             textarea: $('#editor'),
-            toolbar:['title','bold','italic','underline','strikethrough','fontScale','color','ol','ul','blockquote','code','table','link','hr','indent','outdent','alignment'],
+            //toolbar:['title','bold','italic','underline','strikethrough','fontScale','color','ol','ul','blockquote','code','table','link','hr','indent','outdent','alignment'],
         });
     });
     </script>

@@ -1,9 +1,14 @@
 <?php
 
 Route::get('/','PagesController@root')->name('root');
+Route::get('about','PagesController@about')->name('about');
+Route::get('contact','PagesController@contact')->name('contact');
 Route::get('search/products','PagesController@search');
 Route::get('search/brands','PagesController@searchBrands');
 Route::get('letter/brands/{letter}', 'PagesController@searchBrandsByFirstLetter')->name('letter.brands');
+
+//后台
+Route::get('/admin','AdminsController@index')->name('admin');
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

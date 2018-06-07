@@ -3,7 +3,16 @@
 @section('content')
 <div class="row questions">
 
-    <div class="col-md-8">
+    <div class="col-md-12 banner">
+        <img src="/images/problem/banner.jpg" alt="" class="img-responsive center-block">
+    </div>
+
+    <div class="col-md-12 banner">
+        <img src="/images/problem/problem.png" alt="" class="img-responsive">
+    </div>
+
+
+    <div class="col-md-12">
         <div class="panel">
             <div class="panel-heading">
                <div class="header-list">
@@ -19,7 +28,6 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4"></div>
 
 </div>
 @stop
