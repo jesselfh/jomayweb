@@ -12,7 +12,7 @@
     <title>@yield('title', '湖北卓镁工控设备有限公司') </title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css?id=p1178dw6') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?id=p116') }}" rel="stylesheet">
     @yield('styles')
 </head>
 

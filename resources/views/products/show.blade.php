@@ -31,7 +31,7 @@
                             <h4 class="title-green">{{ $product->name }}</h4>
                         </div>
                         <div class="product-block">
-                            <p>品牌：{{ $product->brand_id }}</p>
+                            <p>品牌：{{ $product->brand->name }}</p>
                             <p>型号：{{ $product->model_number }}</p>
                         </div>
                         <div class="product-block">

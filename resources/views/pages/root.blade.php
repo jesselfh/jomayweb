@@ -56,7 +56,7 @@
                             <img src="/images/index/trends.jpg" style="width:300px; height:60px;">
                         </div>
                         <p>湖北卓镁工控设备有限公司是中国工业控制自动化领域的服务贸易商,专业从事各种国外中高端工控自动化产品的进口贸易与工程服务,主要经营来自欧洲,美国,日本等国知名品牌……</p>
-                        <a href="">了解更多……</a>
+                        <a target="_blank" href="{{ route('news.index') }}">了解更多……</a>
                     </div>
                     <div class="col-md-6">
                         <h3>公司简介</h3>
@@ -64,7 +64,7 @@
                             <img src="/images/index/profile.jpg" style="width:300px; height:60px;">
                         </div>
                         <p>湖北卓镁工控设备有限公司是中国工业控制自动化领域的服务贸易商,专业从事各种国外中高端工控自动化产品的进口贸易与工程服务,主要经营来自欧洲,美国,日本等国知名品牌……</p>
-                        <a href="">了解更多……</a>
+                        <a target="_blank" href="{{ route('about') }}">了解更多……</a>
                     </div>
 
                 </div>

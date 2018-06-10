@@ -8452,6 +8452,7 @@ a:hover {
 
 header {
   background-color: #fff;
+  border-bottom: 1px solid rgba(27, 197, 80, 0.3);
 }
 
 header .navbar {
@@ -8894,6 +8895,7 @@ footer .copyright {
   background-color: #1bc550;
 }
 
+.partner a.thumbnail,
 .superior a.thumbnail {
   background-color: transparent;
   border-radius: 0;
@@ -8901,6 +8903,8 @@ footer .copyright {
   padding: 10px 20px;
 }
 
+.partner a:hover,
+.partner a:focus,
 .superior a:hover,
 .superior a:focus {
   border-color: #269D81;
